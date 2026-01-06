@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define TRUE 1
+#define TRUE 1 
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"
 
@@ -61,7 +61,7 @@ int main(int argc, char * argv[])
         printf("Failed to open file. No fortune for you.\n");
         return 1;
     }
-    char * sentence = calloc(1024, sizeof(char));
+    char * sentence = (char*)calloc(1024, sizeof(char));
 
     random_sentence(sentence, file);
     eliminate_trailing(sentence);

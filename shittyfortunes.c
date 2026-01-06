@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TRUE 1
+#define TRUE 1 //tcc  couldn't find "TRUE" for some reason...
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"
 

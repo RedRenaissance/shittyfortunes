@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TRUE 1 //tcc  couldn't find "TRUE" for some reason...
+#include <time.h>
+#define TRUE 1
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"
 
@@ -8,7 +9,7 @@ unsigned int random_number(unsigned int range)
 //  Made this because it's a convenient  way of getting a "true" random.
 {
     int z;
-    int x = ((intptr_t)&z) % range;
+    int x = (((intptr_t)&z) + rand()) %  range;
     return x < 0? -x: x;
 }
 unsigned int count_sentences(FILE * file)
@@ -46,6 +47,7 @@ void random_sentence(char * dest, FILE * file)
 }
 int main(int argc, char * argv[])
 {
+    srand((unsigned int)time(NULL));
     FILE * file = NULL;
     if(argc > 1)
     {
@@ -58,7 +60,7 @@ int main(int argc, char * argv[])
         printf("Failed to open file. No fortune for you.\n");
         return 1;
     }
-    char * sentence = (char*)calloc(1024, sizeof(char));
+    char * sentence = calloc(1024, sizeof(char));
 
     random_sentence(sentence, file);
     eliminate_trailing(sentence);

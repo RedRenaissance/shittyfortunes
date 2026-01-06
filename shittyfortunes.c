@@ -4,10 +4,11 @@
 #define TRUE 1
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"
-
+    
 unsigned int random_number(unsigned int range)
 //  Made this because it's a convenient  way of getting a "true" random.
 {
+    srand((unsigned int)time(NULL));
     int z;
     int x = (((intptr_t)&z) + rand()) %  range;
     return x < 0? -x: x;

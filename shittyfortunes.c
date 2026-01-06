@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <stdint.h>
 #define TRUE 1 
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"

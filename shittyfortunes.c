@@ -9,7 +9,7 @@ unsigned int random_number(unsigned int range)
 //  Made this because it's a convenient  way of getting a "true" random.
 {
     int z;
-    int x = (((intptr_t)&z) %  range;
+    int x = (((intptr_t)&z) % (range&1?range:range+1));
     return x < 0? -x: x;
 }
 unsigned int count_sentences(FILE * file)

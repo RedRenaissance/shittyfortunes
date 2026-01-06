@@ -7,6 +7,8 @@
 
 unsigned int random_number(unsigned int range)
 //  Made this because it's a convenient  way of getting a "true" random.
+//  NOTE: This is an odd way of creating a random from the address int z is pointing to.
+//  I am still experimenting with this and noticed windows machines failing to produce the same result.
 {
     int z;
     int x = (((intptr_t)&z) % (range&1?range:range+1));

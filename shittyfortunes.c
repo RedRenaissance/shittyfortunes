@@ -4,13 +4,12 @@
 #define TRUE 1
 #define MAX_LENGTH 1024
 #define DEFAULT_FILENAME "phrases.txt"
-    
+
 unsigned int random_number(unsigned int range)
 //  Made this because it's a convenient  way of getting a "true" random.
 {
-    srand((unsigned int)time(NULL));
     int z;
-    int x = (((intptr_t)&z) + rand()) %  range;
+    int x = (((intptr_t)&z) %  range;
     return x < 0? -x: x;
 }
 unsigned int count_sentences(FILE * file)
@@ -48,7 +47,6 @@ void random_sentence(char * dest, FILE * file)
 }
 int main(int argc, char * argv[])
 {
-    srand((unsigned int)time(NULL));
     FILE * file = NULL;
     if(argc > 1)
     {

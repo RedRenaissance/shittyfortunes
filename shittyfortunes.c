@@ -52,9 +52,9 @@ int main(int argc, char * argv[])
     FILE * file = NULL;
     if(argc > 1)
     {
-         file  =fopen(argv[1], "r");
+         file = fopen(argv[1], "r");
     }
-    else file =  fopen(DEFAULT_FILENAME, "r");
+    else file = fopen(DEFAULT_FILENAME, "r");
 
     if(file  == NULL)
     {
